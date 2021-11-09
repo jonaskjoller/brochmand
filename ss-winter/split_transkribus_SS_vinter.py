@@ -23,11 +23,12 @@ def save_temp():
     file_temp = re.sub('[/.:?]','',file_temp) #Remove special characters
     file_temp = re.sub('=\n','',file_temp) #Contract hyphenated words
     file_temp = re.sub('\n',' ',file_temp) #Substitute new line with space
-    file_temp = re.sub(' +', ' ', file_temp)
+    file_temp = re.sub(' +', ' ', file_temp) #Reduce surplus spacing
     
     keyword_1 = 'evangelium skriffuer'
     keyword_2 = 'bønen'
-
+    
+    #Exceptions noted by order of appearance
     if file_counter == 16:
         pass
     elif file_counter == 27 or file_counter == 28:
