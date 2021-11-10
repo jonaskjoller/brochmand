@@ -42,8 +42,7 @@ def save_temp():
         for match in re.finditer(keyword_2,file_temp):
             counter += 1
             pos_2.append(match.start())
-        
-        
+            
         save_split(filename_E,file_temp,0,pos_1)
         save_split(filename_G,file_temp,pos_1,pos_2[counter-1])
         save_split(filename_P,file_temp,pos_2[counter-1],len(file_temp))
@@ -54,16 +53,15 @@ def save_temp():
     file_temp = ''
 # =============================================================================        
 def save_split(file,text,pos_1,pos_2):
-    output = open(file,'w',encoding='utf-8')
-    output.write(text[pos_1:pos_2])
-    output.close
+    with open(file,'w',encoding='utf-8') as output
+        output.write(text[pos_1:pos_2])
 # =============================================================================            
 descriptor = ['1SinAdv','2SinAdv','3SinAdv','4SinAdv','Christmas','StSteph','StJohn','1SafChr','NewYear',
               '1SaftNY','Epiph','1SaftEpi', '2SaftEpi','3SaftEpi','4SaftEpi','5SaftEpi','6SaftEpi',
               'MaryPur','Sept','Sexa','Lent','1SinLent','2SinLent','3SinLent','Laetare','SaftLat',
               'MaryAnnun','PalmSun','MaunThur','GoodFri']
 
-directory = ['output_SS_vinter_SunFeast/','output_SS_vinter_Sermons_E/','output_SS_vinter_Sermons_G/','output_SS_vinter_Prayer/']
+directory = ['output_ss_winter_sunfeast/','output_ss_winter_sermons_e/','output_ss_winter_sermons_g/','output_ss_winter_prayer/']
 
 file_name = ''
 file_counter = 0
