@@ -7,3 +7,7 @@ The text from Sabbati Sanctificatio - Winter part has been prepared through the 
 A selection of tools designed to work with the base texts in the corpus.
 
 *split_ss_winter*: Divides Sabbati Sanctificatio - Winter part into individual Sundays and Feastdays with an epistle- and gospel-sermon for each day including a prayer, and then separates the prayer, epistle-sermon and gospel-sermon out into individual folders.
+
+*stopword_ss_winter_20p-10p.py*: Generates a stopword list based on the 20 percent most frequently and 10 percent least frequently occurring word forms.
+
+*stopword_ss_winter_1p-10p.py*: Generates a stopword list based on the 1 percent most frequently and 10 percent least frequently occurring word forms.
