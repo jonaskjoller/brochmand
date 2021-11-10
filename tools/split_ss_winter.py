@@ -53,7 +53,7 @@ def save_temp():
     file_temp = ''
 # =============================================================================        
 def save_split(file,text,pos_1,pos_2):
-    with open(file,'w',encoding='utf-8') as output
+    with open(file,'w',encoding='utf-8') as output:
         output.write(text[pos_1:pos_2])
 # =============================================================================            
 descriptor = ['1SinAdv','2SinAdv','3SinAdv','4SinAdv','Christmas','StSteph','StJohn','1SafChr','NewYear',
