@@ -11,3 +11,5 @@ A selection of tools designed to work with the base texts in the corpus.
 *stopword_20p-10p.py*: Generates a stopword list based on the 20 percent most frequently and 10 percent least frequently occurring word forms. Requires you to be in the same directory as the main text file.
 
 *stopword_1p-10p.py*: Generates a stopword list based on the 1 percent most frequently and 10 percent least frequently occurring word forms. Requires you to be in the same directory as the main text file.
+
+*stopword_05p-10p.py*: Generates a stopword list based on the 0.5 percent most frequently and 10 percent least frequently occurring word forms. Requires you to be in the same directory as the main text file.
