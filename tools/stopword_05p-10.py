@@ -6,8 +6,6 @@ wordfreq = {}
 file_list = []
 counter = 0
 
-os.chdir('../ss-winter/')
-
 # List possible files in folder
 for items in os.listdir():
     if items.endswith('.txt'):
