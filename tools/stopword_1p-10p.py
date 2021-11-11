@@ -36,12 +36,12 @@ for w in wordlist:
         wordfreq[w] += 1
 
 #Get position of top 1 percent and bottom 10 percent
-pos_top20 = int(len(wordfreq)*0.01)
+pos_top1 = int(len(wordfreq)*0.01)
 pos_low10 = int(len(wordfreq)*0.1)
 
 #Save a new file
 with open('stopword_' + keyword + '_1p-10p.txt','w',encoding='utf-8') as file:
-    for k,v in sorted(wordfreq.items(),key=lambda item: item[1], reverse=True)[:pos_top20]:
+    for k,v in sorted(wordfreq.items(),key=lambda item: item[1], reverse=True)[:pos_top1]:
         file.write(k+'\n')
     for k,v in sorted(wordfreq.items(),key=lambda item: item[1], reverse=False)[:pos_low10]:
         file.write(k+'\n')
