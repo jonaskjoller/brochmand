@@ -30,10 +30,7 @@ with open(filename,'r',encoding='utf-8') as file:
 
 #Build word frequency
 for w in wordlist:
-    if w not in wordfreq:
-        wordfreq[w] = 1
-    else:
-        wordfreq[w] += 1
+    wordfreq[w] =  wordfreq.get(w,0) + 1
 
 #Get position of top 1 percent and bottom 10 percent
 pos_top20 = int(len(wordfreq)*0.2)
