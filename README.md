@@ -17,3 +17,5 @@ A selection of tools designed to work with the base texts in the corpus.
 *stopword_05p-5.py*: Generates a stopword list based on the 0.5 percent most frequently word forms and word forms occuring 5 times or less. Requires you to be in the same directory as the main text file.
 
 *stopword_05p-10.py*: Generates a stopword list based on the 0.5 percent most frequently word forms and word forms occuring 10 times or less. Requires you to be in the same directory as the main text file.
+
+*stopword_5f-10.py*: Generates a stopword list based on word forms occuring in more than 5% of the documents and word forms occuring 10 times or less. Requires you to be in the same directory as the main text file.
