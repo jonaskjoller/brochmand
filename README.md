@@ -18,7 +18,7 @@ A selection of tools designed to work with the base texts in the corpus. Note th
 
 *stopword_05p-10.py*: Generates a stopword list based on the 0.5 percent most frequently word forms and word forms occuring 10 times or less. Requires you to be in the same directory as the main text file.
 
-####Generic tools
+#### Generic tools
 These tools are designed to be generic and can be used with any texts, provided that the base assumptions of the program are followed.
 
 *generate_stopwords.py*: Generates a stopword list based on two parameters. 1. Word forms occurring in more than x% of individual documents. 2. Word forms occurring y times or less in entire corpus. These parameters are based on the article by David Mimno on computational historiography: David Mimno. 2012. Computational historiography: Data mining in a century of classics journals. J. Comput. Cult. Herit. 5, 1, Article 3 (April 2012), 19 pages. DOI:https://doi.org/10.1145/2160165.2160168. (3:4).
