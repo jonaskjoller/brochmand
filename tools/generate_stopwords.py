@@ -21,7 +21,7 @@ for line in textwrap.wrap('This program will automatically generate a list of '
 
 print('\nIt builds the stopword list from two principles:\n')
 
-print('1. Word forms occurring in more than x % of individual documents.')
+print('1. Word forms occurring in more than x% of individual documents.')
 
 print('2. Word forms occurring less than y times in entire corpus.\n')
 
