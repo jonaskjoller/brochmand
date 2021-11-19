@@ -9,7 +9,7 @@ file_list = []
 dir_list = []
 doc_list = []
 
-#os.chdir('../ss-winter/') #For testing purposes
+#os.chdir('../ss-winter/') #For testing purposes only
 
 for line in textwrap.wrap('This program will automatically generate a list of '
       'stopwords from a corpus. In order to run properly it assumes the '
