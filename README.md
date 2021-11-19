@@ -8,7 +8,8 @@ A selection of tools designed to work with the base texts in the corpus. Note th
 
 *split_ss_winter*: Divides Sabbati Sanctificatio - Winter part into individual Sundays and Feastdays with an epistle- and gospel-sermon for each day including a prayer, and then separates the prayer, epistle-sermon and gospel-sermon out into individual folders.
 
-*generate_stopwords.py*: Generates a stopword list based on two parameters. 1. Word forms occurring in more than x% of individual documents. 2. Word forms occurring y times or less in entire corpus. In order to run properly it assumes the existence of a single .txt-file containing your entire corpus, a subfolder containing a .txt-file for each individual document in your corpus, and that you run the program in the same folder which contains the single-file corpus. 
+*generate_stopwords.py*: Generates a stopword list based on two parameters. 1. Word forms occurring in more than x% of individual documents. 2. Word forms occurring y times or less in entire corpus. These parameters are based on the article by David Mimno on computational historiography: David Mimno. 2012. Computational historiography: Data mining in a century of classics journals. J. Comput. Cult. Herit. 5, 1, Article 3 (April 2012), 19 pages. DOI:https://doi.org/10.1145/2160165.2160168. (3:4).
+In order to run properly it assumes the existence of a single .txt-file containing your entire corpus, a subfolder containing a .txt-file for each individual document in your corpus, and that you run the program in the same folder which contains the single-file corpus.
 
 *stopword_20p-10p.py*: Generates a stopword list based on the 20 percent most frequently and 10 percent least frequently occurring word forms. Requires you to be in the same directory as the main text file.
 
