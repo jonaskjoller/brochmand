@@ -88,7 +88,7 @@ for document in doc_list:
                     wordfreq_doc[key_1] = wordfreq_doc.get(key_1,0) + 1
     #Keep track of files processed
     counter += 1
-    print('Completed',counter, 'out of',len(doc_list),flush=True)
+    print('\rCompleted',counter, 'out of',len(doc_list),flush=True,end='')
                  
 #Save a new file
 with open('stopword_' + keyword + '_' + str(x) + '_' + str(y) + '.txt','w',encoding='utf-8') as file:
