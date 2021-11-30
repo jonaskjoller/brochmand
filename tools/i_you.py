@@ -1,8 +1,11 @@
 import re
 import os
 
+os.chdir('../ss-winter/') #For testing purposes only
+
 list_i = ['jeg','mig','min','mit']
-list_you = ['j','eder','eders','vi','os']
+list_you = ['j','eder','eders','vi','os','i']
+filter_you = ['guds børn','gode guds','guds tienere','gvds børn','hellige guds']
 
 foldername = 'sermons'
 doc_list = []
@@ -23,10 +26,16 @@ for doc in doc_list:
             file_section.append(file[i:i + int(len(file)/10)])
         for section in file_section:
             for word in section:
+                counter = 0
                 if word in list_i:
-                    counter_i += 1
+                    if word == 'i':
+                        if str(file[counter+1]+' '+file[counter+2]) in filter_you:
+                            counter_i += 1
+                    else:
+                        counter_i += 1                    
                 elif word in list_you:
                     counter_you += 1
+                counter += 1
             freq = (counter_you,counter_i)
             freq_section.append(freq)
         print(freq_section)
