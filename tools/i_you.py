@@ -14,7 +14,7 @@ for doc in os.listdir(foldername):
     if doc.endswith('.txt'):
         doc_list.append(foldername + '/' + doc)
 
-for doc in doc_list[43:44]:  
+for doc in doc_list[14:15]:  
     with open(doc,'r',encoding='utf-8') as file:
         freq_section = []
         freq = ()
@@ -45,6 +45,9 @@ for doc in doc_list[43:44]:
                     print(freq_section[x],':',end=' ')
                 for word in file_section[x]:
                     print(word,end=' ')
-                if freq_section[x+1] >= 0:
+                try:
+                    if freq_section[x+1] >= 0:
+                        print('\n')
+                except:
                     print('\n')
         print(freq_section)
