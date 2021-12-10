@@ -15,29 +15,34 @@ for doc in os.listdir(foldername):
     if doc.endswith('.txt'):
         doc_list.append(foldername + '/' + doc)
 
-for doc in doc_list[14:15]:  
+for doc in doc_list[:1]:  
     with open(doc,'r',encoding='utf-8') as file:
         freq_section = []
-        freq = ()
         file = file.read().split()
         file_section = []
         #Split file into smaller sections
         for i in range(0, len(file), 100):
             file_section.append(file[i:i + 100])
         #Count frequence of 1st and 2nd person pronouns in section
+        #Compound sections
         for i in range(0,len(file_section)):
+            # section = file_section[i]
             try:
-                section = file_section[i]+file_section[i+1]+file_section[i+2]+file_section[i+3]
+                section = file_section[i]+file_section[i+1]+file_section[i+2]+file_section[i+3]+file_section[i+4]
             except:
                 try:
-                    section = file_section[i]+file_section[i+1]+file_section[i+2]
+                    section = file_section[i]+file_section[i+1]+file_section[i+2]+file_section[i+3]
                 except:
                     try:
-                        section = file_section[i]+file_section[i+1]
+                        section = file_section[i]+file_section[i+1]+file_section[i+2]
                     except:
-                        section = file_section[i]
+                        try:
+                            section = file_section[i]+file_section[i+1]
+                        except:
+                            section = file_section[i]
             counter_i = 0
             counter_you = 0
+            #Count pronouns in section
             for w in range(0,len(section)):
                 if section[w] in list_i:
                     counter_i+= 1             
@@ -47,22 +52,29 @@ for doc in doc_list[14:15]:
                             counter_you += 1
                     else:
                         counter_you += 1   
-            # freq = (counter_you,counter_i)
-            # freq_section.append(freq)
+            #Append the difference
             freq_section.append(counter_you-counter_i)
+        #Print consecutive sections of negative value (I-sections)
         for x in range(0,len(file_section)):
             if freq_section[x] < 0:
                 if freq_section[x-1] >= 0:
                     print(freq_section[x],':',end=' ')
-                for word in file_section[x]:
-                    print(word,end=' ')
+                for w in range(0,len(file_section[x])):
+                    if w == len(file_section[x])-1:
+                        print(file_section[x][w],'|',end=' ')
+                    else:
+                        print(file_section[x][w],end=' ')
                 try:
                     if freq_section[x+1] >= 0:
                         print('\n')
                 except:
                     print('\n')
         print(freq_section)
+        #Plot the distribution
         x = []
         for i in range(0,len(freq_section)):
             x.append(i)
-        plt.bar(x,freq_section)
+        fig, ax = plt.subplots()
+        ax.bar(x,freq_section)
+        ax.set_title(doc[9:])
+        plt.show()
