@@ -11,6 +11,9 @@ filter_you = ['guds børn','gode guds','guds tienere','gvds børn','hellige guds
 foldername = 'sermons'
 doc_list = []
 
+section_length = 100
+section_number = 5
+
 for doc in os.listdir(foldername):
     if doc.endswith('.txt'):
         doc_list.append(foldername + '/' + doc)
@@ -21,37 +24,25 @@ for doc in doc_list[:1]:
         file = file.read().split()
         file_section = []
         #Split file into smaller sections
-        for i in range(0, len(file), 100):
-            file_section.append(file[i:i + 100])
+        for i in range(0, len(file), section_length):
+            file_section.append(file[i:i + section_length])
         #Count frequence of 1st and 2nd person pronouns in section
         #Compound sections
         for i in range(0,len(file_section)):
-            # section = file_section[i]
-            try:
-                section = file_section[i]+file_section[i+1]+file_section[i+2]+file_section[i+3]+file_section[i+4]
-            except:
-                try:
-                    section = file_section[i]+file_section[i+1]+file_section[i+2]+file_section[i+3]
-                except:
-                    try:
-                        section = file_section[i]+file_section[i+1]+file_section[i+2]
-                    except:
-                        try:
-                            section = file_section[i]+file_section[i+1]
-                        except:
-                            section = file_section[i]
+            section = file_section[i:i+section_number]
             counter_i = 0
             counter_you = 0
             #Count pronouns in section
-            for w in range(0,len(section)):
-                if section[w] in list_i:
-                    counter_i+= 1             
-                elif section[w] in list_you:
-                    if section[w] == 'i':
-                        if str(file[w+1]+' '+file[w+2]) in filter_you:
-                            counter_you += 1
-                    else:
-                        counter_you += 1   
+            for x in range(0,len(section)):
+                for w in range(0,len(section[x])):
+                    if section[x][w] in list_i:
+                        counter_i+= 1             
+                    elif section[x][w] in list_you:
+                        if section[x][w] == 'i':
+                            if str(file[w+1]+' '+file[w+2]) in filter_you:
+                                counter_you += 1
+                        else:
+                            counter_you += 1   
             #Append the difference
             freq_section.append(counter_you-counter_i)
         #Print consecutive sections of negative value (I-sections)
