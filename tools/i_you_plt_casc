@@ -67,5 +67,5 @@ for doc in doc_list[:1]:
             x.append(i)
         fig, ax = plt.subplots()
         ax.bar(x,freq_section)
-        ax.set_title(doc[9:])
+        ax.set_title(doc[8:])
         plt.show()
