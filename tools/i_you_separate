@@ -1,0 +1,57 @@
+import re
+import os
+
+os.chdir('../ss-winter/') #For testing purposes only
+
+list_i = ['jeg','mig','min','mit']
+list_you = ['j','eder','eders','vi','os','i','dig','du','din','dit']
+filter_you = ['guds børn','gode guds','guds tienere','gvds børn','hellige guds']
+
+foldername = 'sermons'
+doc_list = []
+file_i = '../ss-winter/ss-winter_i.txt'
+file_you = '../ss-winter/ss-winter_you.txt'
+section_length = 80
+section_number = 5
+
+for doc in os.listdir(foldername):
+    if doc.endswith('.txt'):
+        doc_list.append(foldername + '/' + doc)
+
+for doc in doc_list:  
+    with open(doc,'r',encoding='utf-8') as file:
+        freq_section = []
+        file = file.read().split()
+        file_section = []
+        #Split file into smaller sections
+        for i in range(0, len(file), section_length):
+            file_section.append(file[i:i + section_length])
+        #Count frequence of 1st and 2nd person pronouns in section
+        #Compound sections
+        for i in range(0,len(file_section)):
+            section = file_section[i:i+section_number]
+            counter_i = 0
+            counter_you = 0
+            #Count pronouns in section
+            for x in range(0,len(section)):
+                for w in range(0,len(section[x])):
+                    if section[x][w] in list_i:
+                        counter_i+= 1             
+                    elif section[x][w] in list_you:
+                        if section[x][w] == 'i':
+                            if str(file[w+1]+' '+file[w+2]) in filter_you:
+                                counter_you += 1
+                        else:
+                            counter_you += 1   
+            #Append the difference
+            freq_section.append(counter_you-counter_i)
+        #Print consecutive sections of negative value (I-sections)
+        for x in range(0,len(file_section)):
+            if freq_section[x] < 0:
+                with open(file_i,'a',encoding='utf-8') as f_i: 
+                    for w in range(0,len(file_section[x])):
+                        f_i.write(str(file_section[x][w]+' '))
+            else:
+                with open(file_you,'a',encoding='utf-8') as f_you: 
+                    for w in range(0,len(file_section[x])):
+                        f_you.write(str(file_section[x][w]+' '))
