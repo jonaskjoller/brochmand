@@ -5,7 +5,7 @@ import collections
 
 wordlist = []
 word_freqs = collections.defaultdict(int) #Dictionary of word frequencies in corpus
-wordfreq_doc = collections.defaultdict(int) #Dictionary of number of documents a word form occurs in
+wordfreq_doc = collections.defaultdict(int) #Dictionary of document frquency of word forms
 file_list = []
 dir_list = []
 doc_list = []
