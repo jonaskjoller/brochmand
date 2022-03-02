@@ -14,14 +14,15 @@ doc_list = []
 #path = os.chdir('../ss-winter/') #For testing purposes
 path = os.getcwd()
 
-#clean file
+#Clean file
+#The file cleaning is specific to 17th century Danish documents. Adjust as needed
 def clean_doc(file):
     file = file.read()
     file = file.lower() #Lower case
-    file = re.sub('[/.:?;,]','',file) #Remove special characters
+    file = re.sub('[/.:?;,]','',file) #Remove select special characters
     file = re.sub('=\n','',file) #Contract hyphenated words
     file = re.sub('\n',' ',file) #Substitute new line with space
-    file = re.sub(' +', ' ', file) #Reduce surplus spacing
+    file = re.sub(' +',' ',file) #Reduce surplus spacing
     return file
 
 for line in textwrap.wrap('This program will automatically generate a list of '
