@@ -3,10 +3,15 @@ This repository is part of the PhD-project "Theology and Piety in Denmark during
 ### Sabbati Sanctificatio - Winter part (1635)
 The text from Sabbati Sanctificatio - Winter part has been prepared through the application of a Hand-Written Text Recognition Model using Transkribus. I am deeply grateful for the support that [READ COOP](https://readcoop.eu/) has shown the project by granting credits for the text recognition. I have developed my own model for text recognition using PyLaia and have achieved a theoretical error rate of 0.7 and 0.9 %. The first 120 pages in Transkribus have been through a first proof-reading, while the remaining 685 pages have not been proof-read beyond the initial text-recognition. Additionally, the scan used as a basis for the text-recognition is not of the best quality with several pages having a cut-off point that crosses into the text lines. Do take this into account when reusing the data.
 
+### Sabbati Sanctificatio - Summer part (1638)
+The text from Sabbati Sanctificatio - Summer part has been prepared through the application of a Hand-Written Text Recognition Model using Transkribus. This version includes the first 782 pages and is thus not complete and without proofreading. The model used is the same as the winter part.
+
 ### Tools
 A selection of tools designed to work with the base texts in the corpus. Note that these are developed for a particular use case, but can be used in other contexts provided that file names and directories are adjusted accordingly.
 
 *split_ss_winter*: Divides Sabbati Sanctificatio - Winter part into individual Sundays and Feastdays with an epistle- and gospel-sermon for each day including a prayer, and then separates the prayer, epistle-sermon and gospel-sermon out into individual folders.
+
+*split_ss_summer*: Divides Sabbati Sanctificatio - Summer part into individual Sundays and Feastdays with an epistle- and gospel-sermon for each day including a prayer, and then separates the prayer, epistle-sermon and gospel-sermon out into individual folders. Numbered begins at 30 continued from ss-winter. Exceptions are only encoded until 49.
 
 *stopword_20p-10p.py*: Generates a stopword list based on the 20 percent most frequently and 10 percent least frequently occurring word forms. Requires you to be in the same directory as the main text file.
 
