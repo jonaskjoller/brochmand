@@ -37,15 +37,13 @@ def save_temp():
         save_split(filename_G,file_temp,0,len(file_temp))
     else:
         pos_1 = re.search(keyword_1,file_temp).start()
-        counter = 0
         pos_2 = []
         for match in re.finditer(keyword_2,file_temp):
-            counter += 1
             pos_2.append(match.start())
             
         save_split(filename_E,file_temp,0,pos_1)
-        save_split(filename_G,file_temp,pos_1,pos_2[counter-1])
-        save_split(filename_P,file_temp,pos_2[counter-1],len(file_temp))
+        save_split(filename_G,file_temp,pos_1,pos_2[-1])
+        save_split(filename_P,file_temp,pos_2[-1],len(file_temp))
         
     save_split(filename,file_temp,0,len(file_temp))
     
