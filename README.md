@@ -6,6 +6,9 @@ The text from Sabbati Sanctificatio - Winter part has been prepared through the 
 ### Sabbati Sanctificatio - Summer part (1638)
 The text from Sabbati Sanctificatio - Summer part has been prepared through the application of a Hand-Written Text Recognition Model using Transkribus. This version includes the first 782 pages and is thus not complete and without proofreading. The model used is the same as the winter part.
 
+## Universæ Theologiæ Systema I (1633
+The index from Universæ Theologiæ Systema. The index spans 113 pages and covers articles, chapters, and questions for both volumes of UTS. The text recognition is based on the public model xxx
+
 ### Tools
 A selection of tools designed to work with the base texts in the corpus. Note that these are developed for a particular use case, but can be used in other contexts provided that file names and directories are adjusted accordingly.
 
